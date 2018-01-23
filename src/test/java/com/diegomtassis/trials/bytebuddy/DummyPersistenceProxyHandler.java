@@ -9,14 +9,17 @@ public class DummyPersistenceProxyHandler implements PersistenceProxyHandler {
         this.wrapped = wrapped;
     }
 
+    @Override
     public void save() {
         this.dirty = Boolean.FALSE;
     }
 
+    @Override
     public void markDirty() {
         this.dirty = Boolean.TRUE;
     }
 
+    @Override
     public Boolean isDirty() {
         return this.dirty;
     }

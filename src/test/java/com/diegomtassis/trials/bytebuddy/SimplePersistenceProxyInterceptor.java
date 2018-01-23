@@ -1,5 +1,6 @@
 package com.diegomtassis.trials.bytebuddy;
 
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 import net.bytebuddy.asm.Advice.AllArguments;
@@ -15,6 +16,12 @@ public class SimplePersistenceProxyInterceptor {
     public Object intercept(@AllArguments Object[] allArguments, @This PersistenceProxiedObject target,
             @Origin Method method) {
 
+        try {
+            method.invoke(target, allArguments);
+        } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
+            throw new RuntimeException(e);
+        }
+        
         if (this.isMutator(method)) {
             target.getProxyHandler().markDirty();
         }
