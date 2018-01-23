@@ -8,7 +8,7 @@ public interface PersistenceProxiedObject extends ProxiedObject {
     /**
      * Sets the {@link PersistenceProxyHandler} handling the persistence of the entity.
      * 
-     * @param oDocument
+     * @param proxyHandler
      */
     void setProxyHandler(PersistenceProxyHandler proxyHandler);
 
