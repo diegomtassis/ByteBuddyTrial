@@ -1,8 +1,3 @@
-/*****************************************************************************
- * Copyright (C) Compart AG, 2018 - Compart confidential
- *
- *****************************************************************************/
-
 package com.diegomtassis.trials.bytebuddy;
 
 import org.junit.Assert;
