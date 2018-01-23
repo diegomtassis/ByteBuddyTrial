@@ -3,7 +3,7 @@ package com.diegomtassis.trials.bytebuddy;
 /**
  * Handles a persisted object.
  */
-public interface PersistenceProxyHandler {
+public interface PersistenceProxyHandler extends ProxyHandler {
 
     /**
      * Saves the state of the proxied entity.

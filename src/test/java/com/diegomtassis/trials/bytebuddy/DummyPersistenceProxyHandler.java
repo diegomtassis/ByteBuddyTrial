@@ -23,4 +23,9 @@ public class DummyPersistenceProxyHandler implements PersistenceProxyHandler {
     public Boolean isDirty() {
         return this.dirty;
     }
+
+    @Override
+    public Object proxied() {
+        return this.wrapped;
+    }
 }
